@@ -6,6 +6,7 @@ import java.awt.Font;
 import java.awt.ScrollPane;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 import javax.swing.JLabel;
@@ -16,6 +17,7 @@ import javax.swing.JTextField;
 
 import br.senai.sp.jandira.model.Tabuada;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
@@ -37,6 +39,13 @@ public class FrameTabuada {
 		tela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		tela.setLayout(null);
 		tela.getContentPane().setBackground(Color.WHITE);
+		
+		ImageIcon imagem = new ImageIcon(getClass().getResource("aprendendo.png"));
+		JLabel labelImagem = new JLabel(imagem);
+
+		labelImagem.setBounds(80, 30, 50, 50);
+		
+		
 
 		JLabel labelTitulo = new JLabel();
 		labelTitulo.setText("Tabuada 1.0");
@@ -136,6 +145,8 @@ public class FrameTabuada {
 					lista.setListData(resultado);
 				}
 
+			
+			
 			}
 		});
 
@@ -146,7 +157,71 @@ public class FrameTabuada {
 				textMultiplicando.setText("");
 				textMinMultiplicador.setText("");
 				textMaxMultiplicador.setText("");
+				lista.setVisible(false);
 
+			}
+		});
+		
+		textMultiplicando.addKeyListener(new KeyListener() {
+			
+			@Override
+			public void keyTyped(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void keyReleased(KeyEvent e) {
+				textMultiplicando.setText(textMultiplicando.getText().replaceAll("[^0-9]", ""));
+				
+			}
+			
+			@Override
+			public void keyPressed(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		
+		textMinMultiplicador.addKeyListener(new KeyListener() {
+			
+			@Override
+			public void keyTyped(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void keyReleased(KeyEvent e) {
+				textMinMultiplicador.setText(textMinMultiplicador.getText().replaceAll("[^0-9]", ""));
+				
+			}
+			
+			@Override
+			public void keyPressed(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		
+		textMaxMultiplicador.addKeyListener(new KeyListener() {
+			
+			@Override
+			public void keyTyped(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void keyReleased(KeyEvent e) {
+				textMaxMultiplicador.setText(textMaxMultiplicador.getText().replaceAll("[^0-9]", ""));
+				
+			}
+			
+			@Override
+			public void keyPressed(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
 			}
 		});
 
@@ -163,6 +238,7 @@ public class FrameTabuada {
 		painel.add(buttonLimpar);
 		painel.add(labelResultado);
 		painel.add(scroll);
+		painel.add(labelImagem);
 
 		tela.setVisible(true);
 
