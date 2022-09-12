@@ -3,6 +3,7 @@ package br.senai.sp.jandira.gui;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.ScrollPane;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -45,6 +46,8 @@ public class FrameTabuada {
 
 		labelImagem.setBounds(80, 30, 50, 50);
 		
+		Image icon = new ImageIcon(this.getClass().getResource("aprendendo.png")).getImage();
+		tela.setIconImage(icon);
 		
 
 		JLabel labelTitulo = new JLabel();
